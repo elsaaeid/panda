@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--style-->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="./index.js"></script>
+</head>
+<body class="background" id="body">
+      <div class="alert success" id="alertForCart">
+        <span class="closebtnAlert" id="closebtnAlert">&times;</span> 
+        <strong class="alertContent">Success!</strong>
+    </div>
+    <!-- Scroll_button -->
+    <button id="myBtn" title="Go to top"><i class='bx bxs-up-arrow'></i></button>
+    <!-- Header -->
+    <header class="header background content-flex main-padding" id="header">
+      <!-- search-content -->
+    <div class="search-content">
+      <ul id="myHeaderUL">
+        <li><a href="/video" class="nav__link" data-link>بطانية </a></li>
+        <li><a href="/video" class="nav__link" data-link>ملايات</a></li>
+        <li><a href="/video" class="nav__link" data-link>مفروشات العرائس</a></li>
+        <li><a href="/video" class="nav__link" data-link>مفروشات سفرة</a></li>
+        <li><a href="/video" class="nav__link" data-link>فوط  </a></li>
+        <li><a href="/video" class="nav__link" data-link>بشاكير</a></li>
+        <li><a href="/video" class="nav__link" data-link>برانص</a></li>
+        <li><a href="/tutorials" class="nav__link" data-link>لحاف  </a></li>
+      </ul>                                 
+    </div>
+    </header>
+     <!-- APP-Main -->
+    <div class="main-container" id="main-container"></div>
+    <!-- Footer -->
+    <footer id="footer" class="background main-padding"></footer>
+    
+    <script>
+      //search-products
+      function searchProducts() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("searchProductbox");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("product-container");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByClassName("product-title")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+    <script>
+      $(document).ready(function(){
+        //banner owl carousel
+
+      $("#banner-area .owl-carousel").owlCarousel({
+              dots: true,
+              items: 1
+          });
+
+          // top sale owl carousel
+          $("#top-sale .owl-carousel").owlCarousel({
+              loop: true,
+              nav: true,
+              dots: false,
+              responsive : {
+                  0: {
+                      items: 1
+                  },
+                  600: {
+                      items: 3
+                  },
+                  1000 : {
+                      items: 5
+                  }
+              }
+          });
+
+      });
+    </script>
+    <script type="module" src="./src/script/base-container.js"></script>
+    <script type="module" src="./src/script/custom.js"></script>
+    <script type="text/javascript" src="./src/script/cart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--owl-carousel-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
